@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5faf6">
+  <meta name="description" content="Explore and compare a curated set of nonprofit programs with the NGO ImpactGuide donor assistant.">
+  <title>NGO ImpactGuide | Thoughtful giving starts here</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top"><span class="brand-mark">✳</span><span>NGO <b>ImpactGuide</b></span></a>
+    <nav aria-label="Main navigation"><a href="#guide">Try the guide</a><a href="#explore">Explore NGOs</a><a href="#project">Project</a></nav>
+    <a class="header-cta" href="#guide">Start exploring <span>↗</span></a>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy"><span class="eyebrow"><i></i> Thoughtful giving, made easier</span><h1>Find a cause<br><em>that matters to you.</em></h1><p>Explore nonprofit programs, compare what they do, and follow the source information behind each suggestion.</p><a class="button button-green" href="#guide">Find your cause <span>→</span></a><div class="reassurance"><span>✦</span> Your preferences guide the search. You make the final decision.</div></div>
+      <div class="hero-visual"><img src="assets/impactguide_community_banner.png" alt="Illustration showing community support for education, meals, and older adults"><div class="image-label"><span>✳</span> A little help can go a long way</div></div>
+      <div class="hero-stats"><div><b>12</b><span>curated organizations</span></div><div><b>3</b><span>simple ways to explore</span></div><div><b>100%</b><span>you stay in control</span></div></div>
+    </section>
+
+    <section class="section guide-section" id="guide">
+      <div class="section-title"><div><span class="eyebrow">Your personal donor guide</span><h2>What would you like to support?</h2><p>Tell the guide what matters to you. It will search the project’s curated records and explain its suggestions.</p></div><button class="button button-outline" id="reset-session" type="button">↻ <span class="desktop-only">Start a new session</span><span class="mobile-only">Reset</span></button></div>
+      <div class="guide-layout">
+        <div class="chat-panel"><div class="chat-head"><div class="avatar">✳</div><div><b>Your donor guide</b><span><i></i> Ready to help</span></div><span class="offline-chip">No sign-in needed</span></div>
+          <div id="chat" class="chat-log" aria-live="polite"><div class="welcome-message"><div class="avatar">✳</div><div class="message-body"><b>Hi! What cause is important to you?</b><p>Try one of these, or type your own request:</p><div class="suggestion-chips"><button type="button" data-prompt="I want to support education in India">Education in India</button><button type="button" data-prompt="I care about older people and healthcare">Older people &amp; health</button><button type="button" data-prompt="I want to help women with livelihoods">Women’s livelihoods</button></div></div></div></div>
+          <form id="chat-form" class="chat-composer"><label class="visually-hidden" for="chat-input">Describe a cause or program</label><input id="chat-input" maxlength="400" autocomplete="off" placeholder="Describe a cause, location, or program…"><button type="submit" aria-label="Send message">↑</button></form><div class="chat-foot">The assistant uses a fixed list of supported causes and programs.</div>
+        </div>
+        <aside class="preference-card"><div class="pref-icon">⌕</div><h3>Your preferences</h3><p>As you tell the guide what matters, it keeps track of your choices for this visit.</p><dl id="preference-list"><div><dt>Cause</dt><dd>Not selected</dd></div><div><dt>Program</dt><dd>Not selected</dd></div><div><dt>Location</dt><dd>Not selected</dd></div></dl><div class="privacy-note"><span>◉</span><span>Your choices stay in this browser session. No account needed.</span></div></aside>
+      </div>
+    </section>
+
+    <section class="section explore-section" id="explore">
+      <div class="section-title"><div><span class="eyebrow">The curated directory</span><h2>Meet the organizations</h2><p>Search the sample records, open their sources, and compare up to three side by side.</p></div><span id="record-count" class="count-label">12 organizations</span></div>
+      <div class="directory-tools"><label class="search-box"><span>⌕</span><input id="search-input" type="search" placeholder="Search names, causes, or programs…"></label><label class="filter-box"><span class="visually-hidden">Filter by cause</span><select id="cause-select"><option value="">All causes</option></select></label><button class="button button-outline compare-button" id="compare-button" type="button" disabled>Compare selected <span id="selected-count">0</span></button></div>
+      <div id="compare-panel" class="compare-panel" hidden></div><div id="directory-grid" class="directory-grid"></div>
+      <p class="source-disclaimer"><span>ⓘ</span> Broad location labels are for discovery. Check each organization’s own source for current programs and exact coverage.</p>
+    </section>
+
+    <section class="section how-section" id="how-it-works"><div class="section-title"><div><span class="eyebrow">Simple by design</span><h2>How the guide works</h2><p>A small, transparent agent that helps donors explore—not decide for them.</p></div></div>
+      <div class="steps-grid"><article class="step-card"><span class="step-number">01</span><div class="step-icon mint">♡</div><h3>Tell it what matters</h3><p>Share a cause, program, or location in your own words.</p></article><article class="step-card"><span class="step-number">02</span><div class="step-icon peach">?</div><h3>Clarify if needed</h3><p>If your request is broad, it asks one short follow-up question.</p></article><article class="step-card"><span class="step-number">03</span><div class="step-icon blue">⌕</div><h3>Search the records</h3><p>It filters the curated directory using the preferences you gave.</p></article><article class="step-card"><span class="step-number">04</span><div class="step-icon yellow">↗</div><h3>Review the evidence</h3><p>Explore the match details and open the organization’s own source.</p></article></div>
+      <div class="agent-explainer"><div class="agent-spark">✳</div><div><b>What makes it an agent?</b><p>It keeps your preferences, decides when a follow-up is needed, chooses whether to clarify or search, uses the NGO directory as a tool, then shows the actions it took. It does not donate, rate, certify, or verify NGOs.</p></div></div>
+    </section>
+
+    <section class="section project-section" id="project"><div class="project-intro"><span class="eyebrow">The college project</span><h2>Technology should help people make their own choices.</h2><p>NGO ImpactGuide is a BE CSE mini-project exploring a bounded Agentic AI workflow for donor decision support. Its sample records are curated from public organization pages.</p><div class="project-buttons"><a class="button button-green" href="downloads/NGO_ImpactGuide_Project_Report.docx" download>Download project report <span>↓</span></a><a class="button button-outline" href="downloads/NGO_ImpactGuide_Presentation_College.pptx" download>View presentation <span>↗</span></a></div></div>
+      <div class="project-facts"><article><span class="fact-icon">◎</span><div><b>The problem</b><p>NGO program information is scattered and difficult for donors to compare.</p></div></article><article><span class="fact-icon">✦</span><div><b>The approach</b><p>Preference clarification, transparent filtering, comparison, and source links.</p></div></article><article><span class="fact-icon">⌂</span><div><b>Built with</b><p>HTML, CSS, and JavaScript with a curated JSON dataset. The evaluator needs no account or installation.</p></div></article><article><span class="fact-icon">✓</span><div><b>Project evaluation</b><p>15 automated checks passed for the Python prototype: preference parsing, clarification, search, comparison, data handling, and fallback behavior.</p></div></article></div>
+      <div class="project-boundary"><b>A responsible boundary</b><span>These are relevance suggestions based on a small sample—not an NGO rating, certification, legitimacy check, or guarantee of impact. Please verify details with the organization before donating.</span></div>
+      <details class="project-details"><summary>Open the project details</summary><div class="detail-grid">
+        <article><b>Project objectives</b><ul><li>Help donors describe what they care about.</li><li>Clarify broad requests before searching.</li><li>Compare relevant organization information and sources.</li><li>Evaluate the Python prototype with functional tests.</li></ul></article>
+        <article><b>Agent workflow</b><div class="mini-flow"><span>Donor goal</span><i>→</i><span>Understand preferences</span><i>→</i><span>Clarify or search</span><i>→</i><span>Show sourced matches</span></div><p>The browser agent applies supported preference rules, chooses a follow-up or directory search, then shows an action trace.</p></article>
+        <article><b>Data and evaluation</b><p>The demonstration uses 12 curated sample records with organization descriptions, broad location labels, program tags, source links, and source dates. The Python prototype passed 15 automated checks; that result does not certify the real-world accuracy of the records.</p></article>
+        <article><b>Scope and limits</b><p>One donor uses the site at a time. The directory is read-only, preferences are kept only in the current page session, and the site does not process donations, contact NGOs, verify legitimacy, or guarantee outcomes.</p></article>
+      </div></details>
+    </section>
+    <section class="closing-cta"><div><span class="eyebrow">Ready when you are</span><h2>Start with a cause you care about.</h2><p>Explore the curated records and decide what feels right to you.</p></div><a class="button button-white" href="#guide">Try the donor guide <span>→</span></a></section>
+  </main>
+  <footer><a class="brand" href="#top"><span class="brand-mark">✳</span><span>NGO <b>ImpactGuide</b></span></a><p>Project demonstration · Uses public sample information · No donations are processed here</p><a href="#top" class="back-top">Back to top ↑</a></footer>
+  <script src="app.js" defer></script>
+</body>
+</html>

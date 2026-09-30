@@ -43,6 +43,23 @@ If `python3.14` is not available, use the Python launcher you installed (for exa
 
 This is a local website: the Flask process serves it from your computer. Other people cannot open it from the internet unless you deploy it to a hosting service. The standalone webpage currently includes guided recommendations and directory search; local dataset editing remains in the Streamlit interface.
 
+## One-link evaluation website
+
+The `site/` folder contains the static browser version for evaluators. It opens as a normal webpage and includes the guided assistant, NGO directory search/filtering, comparison of up to three records, an explanation of the agent workflow, project limitations, and report/presentation downloads. It uses only HTML, CSS, JavaScript, and bundled JSON/image/document files. It does not need Python, Flask, Streamlit, Ollama, or a local terminal when hosted.
+
+### Publish it with Cloudflare Pages
+
+Cloudflare Pages can connect to this private GitHub repository and host the static files. The published site is publicly accessible even though this source repository remains private; its webpage code, sample records, report, and presentation can be viewed or downloaded by site visitors. Do not put passwords, API keys, or private records in `site/`.
+
+1. Sign in to Cloudflare and open **Workers & Pages**.
+2. Select **Create application**, then **Pages** and **Import an existing Git repository**.
+3. Connect GitHub and grant Cloudflare access to the `NGO_ImpactInsight` repository.
+4. Select the `main` branch.
+5. Set the build command to `exit 0` and the build output directory to `site`.
+6. Select **Save and Deploy**. Cloudflare will provide a `*.pages.dev` URL. Open it on your phone or computer to confirm the evaluator view, then share that URL.
+
+Later pushes to `main` update the website automatically. The hosted demo is read-only: donor preferences last for the current page session, and changing the shared NGO dataset requires publishing an updated `site/data/organizations.json`. The optional Ollama model and local database editor are part of the Python edition, not this simple public demo.
+
 The app creates `data/ngo_impactguide.db` from the bundled CSV on first run. New starter records are added once when the app upgrades an existing database; locally edited records are preserved. Added or edited records are stored in this local database. It is ignored by Git; deleting it restores the starter records from the CSV.
 
 ## Optional local LLM

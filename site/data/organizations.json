@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Pratham Education Foundation",
+    "causes": "education;children",
+    "locations": "India;multiple states",
+    "program_types": "learning support;remedial education;school learning",
+    "description": "Provides education programs that address learning gaps, including foundational learning and education partnerships.",
+    "source_url": "https://www.pratham.org/programs/education/",
+    "source_accessed": "2026-09-27",
+    "notes": "Review the current program details and exact location coverage before formal use."
+  },
+  {
+    "name": "Teach For India",
+    "causes": "education;children",
+    "locations": "India;multiple cities",
+    "program_types": "teaching;classroom education;leadership development",
+    "description": "Its fellowship places fellows as teachers in schools serving students from low-income communities.",
+    "source_url": "https://www.teachforindia.org/fellowship",
+    "source_accessed": "2026-09-27",
+    "notes": "Program availability varies by city; confirm current coverage on the source site."
+  },
+  {
+    "name": "The Akshaya Patra Foundation",
+    "causes": "education;children;nutrition",
+    "locations": "India;multiple states",
+    "program_types": "school meals;nutrition;education support",
+    "description": "Runs school meal programs in partnership with government systems and schools.",
+    "source_url": "https://www.akshayapatra.org/",
+    "source_accessed": "2026-09-27",
+    "notes": "Confirm current locations and program details on the source site."
+  },
+  {
+    "name": "CRY - Child Rights and You",
+    "causes": "children;child rights;education",
+    "locations": "India;multiple states",
+    "program_types": "child rights;education;health;protection",
+    "description": "Works to advance the rights of children in India through community and collective action.",
+    "source_url": "https://www.cry.org/about-cry/",
+    "source_accessed": "2026-09-27",
+    "notes": "Confirm current projects and locations on the source site."
+  },
+  {
+    "name": "Goonj",
+    "causes": "community development;disaster relief;livelihoods",
+    "locations": "India;multiple states",
+    "program_types": "community development;disaster response;material support",
+    "description": "Works on disaster response and community development initiatives, including use of material resources in development work.",
+    "source_url": "https://goonj.org/impact/",
+    "source_accessed": "2026-09-27",
+    "notes": "Confirm current program descriptions and locations on the source site."
+  },
+  {
+    "name": "HelpAge India",
+    "causes": "elderly;health;livelihoods",
+    "locations": "India;multiple states",
+    "program_types": "elder care;healthcare;livelihoods;advocacy",
+    "description": "Works on older people's wellbeing through programs including healthcare, agecare, livelihoods, and advocacy.",
+    "source_url": "https://www.helpageindia.org/about-us",
+    "source_accessed": "2026-09-27",
+    "notes": "Confirm current program descriptions and locations on the source site."
+  },
+  {
+    "name": "Educate Girls",
+    "causes": "education;children;women",
+    "locations": "India;multiple states",
+    "program_types": "girls' education;learning support;community engagement",
+    "description": "Works with communities and schools to support girls' access to education, school retention, and student learning.",
+    "source_url": "https://www.educategirls.ngo/what-we-do/",
+    "source_accessed": "2026-09-28",
+    "notes": "Program description reviewed against the organization's current What We Do page; confirm current state-level coverage before relying on a specific location."
+  },
+  {
+    "name": "Project Nanhi Kali",
+    "causes": "education;children;women",
+    "locations": "India;multiple states",
+    "program_types": "girls' education;learning support;life skills;school supplies",
+    "description": "Supports girls' formal education through academic support and related learning and development activities.",
+    "source_url": "https://www.nanhikali.org/education-support",
+    "source_accessed": "2026-09-28",
+    "notes": "Program description reviewed against the organization's education support page; confirm current local availability."
+  },
+  {
+    "name": "Akshara Foundation",
+    "causes": "education;children",
+    "locations": "India;Karnataka;north-eastern states",
+    "program_types": "learning support;numeracy;school readiness;community education",
+    "description": "Works with schools and communities on children's foundational learning, numeracy, and education programs.",
+    "source_url": "https://akshara.org.in/who/",
+    "source_accessed": "2026-09-28",
+    "notes": "Program examples are listed on the organization's site; check the specific program's current status and area before relying on a location match."
+  },
+  {
+    "name": "Magic Bus India Foundation",
+    "causes": "education;children;livelihoods",
+    "locations": "India;multiple states",
+    "program_types": "life skills;education enhancement;employability skilling",
+    "description": "Works with young people through adolescent education and livelihood programs that include life skills and employability support.",
+    "source_url": "https://www.magicbus.org/our-approach.php",
+    "source_accessed": "2026-09-28",
+    "notes": "Program description reviewed against the organization's current approach page; confirm local availability."
+  },
+  {
+    "name": "Sightsavers India",
+    "causes": "health;disability inclusion;children",
+    "locations": "India;multiple states",
+    "program_types": "eye health;inclusive education;social inclusion",
+    "description": "Works in areas including eye health, inclusive education, and social inclusion for people with disabilities.",
+    "source_url": "https://www.sightsaversindia.org/what-we-do/",
+    "source_accessed": "2026-09-28",
+    "notes": "Program description reviewed against the organization's current What We Do page; exact local coverage is not represented in this sample record."
+  },
+  {
+    "name": "Self Employed Women's Association (SEWA)",
+    "causes": "women;livelihoods",
+    "locations": "India;multiple states",
+    "program_types": "livelihoods;skills training;microfinance;market linkages",
+    "description": "A membership-based organization supporting self-employed women workers through livelihood and self-reliance initiatives.",
+    "source_url": "https://www.sewa.org/about-us/",
+    "source_accessed": "2026-09-28",
+    "notes": "Program description reviewed against the organization's About Us page; confirm specific services and local availability."
+  }
+]
