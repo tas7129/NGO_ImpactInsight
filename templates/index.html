@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5faf6">
+  <title>NGO ImpactGuide</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="#home"><span class="brand-mark">✳</span> NGO ImpactGuide</a><nav><a href="#guide">Guided guide</a><a href="#directory">Browse NGOs</a></nav></header>
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy"><span class="eyebrow">A clearer way to give thoughtfully</span><h1>Find a cause<br><em>that matters to you.</em></h1><p>Explore nonprofit programs, compare what they do, and follow the source information behind each suggestion.</p><a class="primary-link" href="#guide">Get started <span>→</span></a><div class="trust-note">Suggestions are based on the records shown here. You make the final decision.</div></div>
+      <div class="hero-art"><img src="/assets/impactguide_community_banner.png" alt="Illustration of people supporting education, meals, and older adults"><span class="art-caption">An illustration of community support</span></div>
+    </section>
+    <section class="guide section" id="guide"><div class="section-heading"><div><span class="eyebrow">Personalized discovery</span><h2>What would you like to support?</h2></div><button class="quiet-button" id="new-session">Start new session</button></div>
+      <p class="section-intro">Tell the guide a cause, program, or location. If your request is broad, it will ask one follow-up question.</p>
+      <div class="chat" id="chat" aria-live="polite"><div class="welcome"><span class="welcome-icon">✦</span><div><strong>Hi, I’m your donor guide.</strong><p>Try “I want to support education in India” or “I care about older people.”</p></div></div></div>
+      <form id="message-form" class="composer"><label class="sr-only" for="message">Describe a cause or program</label><input id="message" maxlength="500" autocomplete="off" placeholder="Describe a cause, location, or program preference"><button type="submit" aria-label="Send">↑</button></form>
+      <details class="preference-box"><summary>Current session preferences</summary><div id="preferences">No preferences yet.</div></details>
+    </section>
+    <section class="directory section" id="directory"><div class="section-heading"><div><span class="eyebrow">Curated local records</span><h2>Browse organizations</h2></div><span id="result-count" class="count-pill">Loading…</span></div><div class="filters"><input id="search" placeholder="Search organization, cause, or program"><select id="cause-filter"><option value="">All causes</option></select></div><div class="cards" id="directory-cards"></div></section>
+  </main>
+  <footer><span>NGO ImpactGuide</span><span>Information is for decision support. It is not a rating, certification, or guarantee of impact.</span></footer>
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</body>
+</html>

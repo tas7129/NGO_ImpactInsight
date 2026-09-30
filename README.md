@@ -17,6 +17,32 @@ pip install -r requirements.txt
 streamlit run ngo_impactguide.py
 ```
 
+## Run the standalone webpage (no Streamlit)
+
+The Flask version provides the guided donor assistant and searchable NGO directory in a normal browser page. It uses the same curated CSV/SQLite data and offline agent rules; it does not require Streamlit, an LLM account, external font downloads, or internet access after Flask is installed. The Streamlit version above remains available as a separate interface.
+
+On macOS, open Terminal and run:
+
+```bash
+cd ~/Desktop/AgenticAI/NGO_ImpactGuide
+python3.14 -m venv .venv-web
+source .venv-web/bin/activate
+python -m pip install -r requirements-web.txt
+python web_app.py
+```
+
+Then open **http://127.0.0.1:5000** in Safari, Chrome, or Brave. Keep the Terminal window open while using the page. To stop it, press **Control+C** in Terminal. The next time, run:
+
+```bash
+cd ~/Desktop/AgenticAI/NGO_ImpactGuide
+source .venv-web/bin/activate
+python web_app.py
+```
+
+If `python3.14` is not available, use the Python launcher you installed (for example, `python3`), provided it is Python 3.10 or newer. On Windows, create the environment with `py -3 -m venv .venv-web`, activate it with `.venv-web\\Scripts\\Activate.ps1`, then install `requirements-web.txt` and run `python web_app.py`.
+
+This is a local website: the Flask process serves it from your computer. Other people cannot open it from the internet unless you deploy it to a hosting service. The standalone webpage currently includes guided recommendations and directory search; local dataset editing remains in the Streamlit interface.
+
 The app creates `data/ngo_impactguide.db` from the bundled CSV on first run. New starter records are added once when the app upgrades an existing database; locally edited records are preserved. Added or edited records are stored in this local database. It is ignored by Git; deleting it restores the starter records from the CSV.
 
 ## Optional local LLM
