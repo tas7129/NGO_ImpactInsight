@@ -1,8 +1,10 @@
 # NGO ImpactGuide
 
-An offline-first, locally run Agentic AI college project for helping donors discover and compare nonprofit organizations from a curated dataset. It includes a guided donor assistant, a searchable directory with side-by-side comparison, and a local dataset manager. The assistant asks for clarification when needed, searches records, explains preference matches, shows source links and dates, and refreshes suggestions when preferences change.
+An offline-first, locally run Agentic AI college project for helping donors discover and compare nonprofit organizations from a curated dataset. It includes a guided donor assistant, a searchable directory with side-by-side comparison, and a local dataset manager. The assistant asks for clarification when needed, searches records, explains preference matches, shows source links and dates, and refreshes suggestions when preferences change. Its “Agent actions this turn” panel makes the selected actions visible without exposing private chain-of-thought.
 
 This application is for decision support. It does not certify organizations, verify their current status, measure donation impact, or process/contact donations. It runs on the student's computer in a browser at a local address; it does not require a hosted backend. After setup, core search, browsing, and data management work without an internet connection. Source links need internet when opened; Ollama is optional.
+
+The interface uses a light, colorful theme. Its community banner is an AI-generated illustration for visual context; it does not depict the listed organizations or their beneficiaries.
 
 ## Run locally
 
@@ -15,29 +17,37 @@ pip install -r requirements.txt
 streamlit run ngo_impactguide.py
 ```
 
-The app creates `data/ngo_impactguide.db` from the bundled CSV on first run. Added or edited records are stored in this local database. It is ignored by Git; deleting it restores the starter records from the CSV.
+The app creates `data/ngo_impactguide.db` from the bundled CSV on first run. New starter records are added once when the app upgrades an existing database; locally edited records are preserved. Added or edited records are stored in this local database. It is ignored by Git; deleting it restores the starter records from the CSV.
 
 ## Optional local LLM
 
-The core workflow does not depend on an LLM. To enable grounded, locally generated summaries, install [Ollama](https://ollama.com), download a model supported by your computer, start Ollama, and set `OLLAMA_MODEL` to the local model name before launching the app. Example:
+The core workflow works offline using a bounded preference vocabulary and decision controller. To add local-model-assisted preference interpretation and grounded summaries, install [Ollama](https://ollama.com), download a model supported by your computer, start Ollama, and set `OLLAMA_MODEL` before launching the app. The model output is constrained to supported preference labels, and search remains deterministic over the local dataset. Example:
 
 ```bash
 ollama pull qwen2.5:3b
 OLLAMA_MODEL=qwen2.5:3b streamlit run ngo_impactguide.py
 ```
 
-Without Ollama, the app uses a deterministic summary generated from the retrieved NGO records. It never asks the model to invent NGO facts.
+Without Ollama, the app uses deterministic preference parsing and summaries from the retrieved NGO records. The agent still performs clarification, search, comparison, and refresh actions. With Ollama enabled, it interprets natural-language preferences and drafts an overview from retrieved evidence; review factual details in the linked organization sources.
 
 ## Data and sources
 
-`data/ngo_dataset.csv` contains a small starter dataset. Source links point to organization websites and were selected as starting points for student review. Check each page before using the data in a formal submission, record the review date, and update `data_sources.md`. The sample records intentionally avoid impact scores and unverified claims.
+`data/ngo_dataset.csv` contains 12 starter records. Source links point to organization websites and program pages. Check each page before using the data in a formal submission, record the review date, and update `docs/data_sources.md`. Coverage labels remain broad where current state-level service could not be confirmed. The sample records intentionally avoid impact scores and unverified claims.
 
 ## Features
 
-- **Guided assistant:** clarify donor preferences, search records, and refresh suggestions when preferences change.
+- **Guided assistant:** clarify donor preferences, search records, and refresh suggestions when preferences change; show the tools/actions taken.
 - **Browse and compare:** search and filter the local directory, then compare up to three records side by side.
 - **Manage local data:** add, edit, or delete NGO records in the local SQLite database.
-- **Optional local LLM:** Ollama can generate brief grounded explanations; deterministic summaries work without it.
+- **Optional local LLM:** Ollama can normalize natural-language preferences and draft a brief evidence-grounded overview; deterministic rules keep the full workflow available without it.
+
+## Run the tests
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+The tests cover supported preference aliases, clarification decisions, strict location filtering, database upgrades, end-to-end assistant behavior, and LLM outage fallback. See `docs/test_results.md` for the latest run summary.
 
 ## Agent workflow
 
@@ -50,4 +60,4 @@ Without Ollama, the app uses a deterministic summary generated from the retrieve
 
 ## Project structure
 
-See `docs/architecture.md` for modules, data fields, scope, and evaluation notes.
+See `docs/architecture.md` for modules, data fields, scope, and evaluation notes. The report and presentation are available at `docs/NGO_ImpactGuide_Project_Report.docx` and `docs/NGO_ImpactGuide_Presentation_College.pptx`; detailed automated results are in `docs/test_results.md`.
